@@ -8,9 +8,10 @@ const app = express();
 const port = 3000;
 
 
-app.set("view engine", ".ejs")
-app.use(express.static(path.join(__dirname, "public"))) // Permite que sejam buscados nos seus devidos caminhos o style.css e o script.js do front end
-app.use(routes)
+app.set("view engine", ".ejs");
+app.use(express.static(path.join(__dirname, "public"))); // Permite que sejam buscados nos seus devidos caminhos o style.css e o script.js do front end
+app.use(express.urlencoded());
+app.use(routes);
 
 // ROTA       // callback
 app.get("/home",  (req, res) => {

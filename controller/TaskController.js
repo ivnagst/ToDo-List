@@ -1,7 +1,14 @@
 //método da rota
 const Task = require ('../models/Task') // quando importamos a tarefa aqui, nós também importamos o mongoose :D 
 
-const getAllTasks = (req, res) => {
+const getAllTasks = async (req, res) => {
+  try { 
+    const tasksList = await Task.find() // Pq do [await]? Mais uma vez a async function precisa de aguardar a função realizar alguma tarefa e por fim retornar.
+    return res.render("index", {tasksList})
+  }
+  catch {
+    res.status(500).send({error: err.message})
+  }  
     return res.render("index");
 };
 
@@ -11,7 +18,6 @@ const createTask = async (req, res) => {
     if(!task.task){ // Se não tiver nada na task, o que vai acontecer? 
         return res.redirect("/") // Respondendo o comnentário acima, ele irá recarregar a página. 
     }
-
     try {
         await Task.create(task)
         return res.redirect("/")
