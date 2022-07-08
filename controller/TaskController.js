@@ -26,9 +26,9 @@ const createTask = async (req, res) =>
     catch (err){ //sem o catch, o try não roda
         res.status(500).send({
             error: err.message
-        })
-    }
-}
+        });
+    };
+};
 const getById =  async (req, res) => {
     try {
         const tasksList = await Task.find();
@@ -38,10 +38,10 @@ const getById =  async (req, res) => {
         } else {
             const taskDelete = await Task.findOne({_id: req.params.id});
             res.render("index", {task: null, tasksList, taskDelete});
-        }             
+        };             
     } catch (err) {
-    res.status(500).send({ error:err.message })    
-    }
+    res.status(500).send({ error:err.message });    
+    };
 };
 const updateOneTask = async (req, res) => {
     try {
@@ -51,7 +51,7 @@ const updateOneTask = async (req, res) => {
     } catch (err) {
         res.status(500).send({error:err.message})
     }
-}
+};
 const deleteOneTask = async (req, res) => {
     try {
         await Task.deleteOne({_id: req.params.id});
@@ -59,7 +59,7 @@ const deleteOneTask = async (req, res) => {
     } catch (err) {
         res.status(500).send({ error: err.message })
     }
-}
+};
 /* Pq estou utilizando uma FUNÇÃO ASSíNCRONA? 
    Bom, se não utilizar este recurso o código procedural irá executar tudo pela frente, 
    sem esperar outros trechos/linhas de código, e neste caso iremos aguardar */
