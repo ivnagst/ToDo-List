@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const connectToDb = () => {
-    mongoose //Mongoose é uma biblioteca de programação orientada a objetos JavaScript que cria uma conexão entre MongoDB e a estrutura de aplicativo da web Express.
+    mongoose // Mongoose é uma biblioteca de programação orientada a objetos JavaScript que cria uma conexão entre MongoDB e a estrutura de aplicativo da web Express.
     .connect(
         "mongodb+srv://root:admin@todolist.du7so.mongodb.net/?retryWrites=true&w=majority",
         {
@@ -14,3 +14,6 @@ const connectToDb = () => {
 }
     module
     .exports = connectToDb
+
+
+    //

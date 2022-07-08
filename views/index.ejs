@@ -18,6 +18,7 @@
         <button id="addButton" type="submit">Adicionar</button>
     </form>
     <% } else { %>
+
     <form action="/updateOne/<%= task._id %>" method="post"> 
         <input type="text" name="task" id="task" value="<%= task.task %>">
         <button id="addButton" type="submit">Atualizar</button>
@@ -25,18 +26,30 @@
     <% } %>
 </header>
 
-    <section id="tasks">
-    <ul>
-        <% tasksList.forEach((task) => { %>
-        <li>  
-            <%= task.task %> | <%= task.date.toLocaleDateString('pt-br') %> 
-            <a href="/getById/<%= task._id %>">Editar</a>
-            <a href="">Apagar</a>
-        </li>
-        <% }) %>    
-    </ul>
-    </section>
+<section id="tasks">
+<ul>
+    <% tasksList.forEach((task) => { %>
+    <li>  
+        <%= task.task %> | <%= task.date.toLocaleDateString('pt-br') %> 
+        <a href="/getById/<%= task._id %>/update">Editar</a>
+        <a href="/getById/<%= task._id %>/">Apagar</a>
+    </li>
+    <% }) %>    
+</ul>
+</section>
 
+<% if(taskDelete != null ) { %>
+<section id="modal">
+    <div id="card">
+        <a href="/">x</a>"
+        <h2>Confirmação</h2>
+        <hr> 
+        <p>Deseja realmente apagar a tarefa: <%= taskDelete.task   %>? </p>
+        <a href="/"> Não! </a>
+        <a href="/updateOne/<%= taskDelete._id %>">Sim</a>
+    </div>
+</section>
+<% } %>
 
     <script src="script.js"></script>
 </body>
