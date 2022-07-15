@@ -1,7 +1,214 @@
-@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus&display=swap');
 
-* {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');   
+
+*{
     margin: 0;
     padding: 0;
-    font-family: Gentim Plus;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
 }
+body {
+    background-color: #202024;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}   
+header{
+    background-color: #4d372b;
+    padding: 3rem;
+    margin: .5rem;
+    text-align: center;
+}
+header h1{
+    padding-bottom: 3rem;
+}
+input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: .6rem;
+    font-size: 1rem;
+    outline: none;
+    background-color: #202024;
+    color:#fff;
+
+}
+button  {
+    padding: 1rem;
+    width: 8%;
+    background-color: #8282aa;
+    color:rgb(0, 0, 0);
+    text-align: center;
+    font-size: .95rem;
+    cursor: auto;
+    border-radius: 0;
+    border:rgb(0, 0, 0);
+    outline: auto
+}
+
+button:hover {
+    background-color:darkslategrey;
+    color: #fff;   
+    transition: all .3s ease-in-out;    
+}
+section#tasks {
+    margin: 2rem;
+}
+ul {
+    list-style: none;
+}
+ul li {
+    position: relative;
+    padding: 0.65rem;
+    background-color: rgb(22, 22, 24);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+ul li div span {
+    color: #cccc;
+    font-style: italic;
+    font-size: .8rem;
+    padding-left: 1rem;
+
+}
+
+ul li div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+ul li:nth-child(odd){
+    background: #272727;
+}
+ul li:hover {
+    background:#5a5a5a;    
+}
+
+a.btnUpdate{
+    padding: .5rem ;
+    text-decoration: none;
+    color: #ccc;
+    transition: all .3s ease-in-out;    
+}
+
+a.btnUpdate:hover {
+    background: #3643f4;
+    color: #fff;
+}
+
+a.btnDelete{
+    padding: .5rem ;
+    text-decoration: none;
+    color: #ccc;
+    transition: all .3s ease-in-out;    
+}
+
+a.btnDelete:hover {
+    background:rgb(255, 0, 0);   
+    color: rgb(238, 255, 0);
+}
+
+section#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto; 
+    background-color: #00000080;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+}
+
+div#card {
+    width: 30rem;
+    position: relative;
+    background-color: #202024;
+}
+div#head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+div#card h2{
+    margin: 0;
+}
+
+div#card a#close {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1.7rem;
+    transition: all 0.3s ease-in-out;
+}
+div#card a#close:hover {
+    background: brown;
+    border-radius: 5rem;
+    padding: 0 1rem;
+}
+div#card hr {
+    width: 90%;
+    margin: 0 auto;
+}
+div#card p {
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.2rem;
+}
+div#btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+div#btns a {
+    text-decoration: none;
+    padding: .4rem;
+    width: 7rem;
+    text-align: center;
+    background-color: #202024;
+    font-size: 1.1rem;
+}
+div#btns a#btnNot {
+    color: #ff0000;
+    border: solid 1px #ff0000;
+    margin-right: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+div#btns a#btnNot:hover{
+    color: rgb(255, 0, 0);
+    color: #fff;
+}
+div#btns a#btnYes {
+    color: rgb(26, 92, 17);
+    border: solid 0.5px #ff0000;
+    transition: all 0.3s ease-in-out;
+}
+div#btns a#btnYes:hover {
+    color: rgb(26, 92, 17);
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
