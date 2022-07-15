@@ -34,9 +34,9 @@ input {
 
 }
 button  {
-    padding: 1rem;
+    padding: 0.6rem;
     width: 8%;
-    background-color: #8282aa;
+    background-color: #e77e41d8;
     color:rgb(0, 0, 0);
     text-align: center;
     font-size: .95rem;
@@ -49,7 +49,7 @@ button  {
 button:hover {
     background-color:darkslategrey;
     color: #fff;   
-    transition: all .3s ease-in-out;    
+    transition: all .5s ease-in-out;    
 }
 section#tasks {
     margin: 2rem;
